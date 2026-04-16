@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Allkin&family=Atomic+Age&family=Bitcount+Ink:wght@100..900&family=Bungee+Spice&family=Butcherman&family=Cabin:ital,wght@0,400..700;1,400..700&family=Caesar+Dressing&family=Diplomata&family=Fascinate&family=Faster+One&family=Henny+Penny&family=Honk:MORF@15&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Moo+Lah+Lah&family=Nabla&family=Nosifer&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&family=Playwrite+US+Trad+Guides&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&family=Rubik+Beastly&family=Rubik+Burned&family=Sekuya&family=Snowburst+One&family=Whisper&family=Workbench&display=swap");
+
 body {
   background-color: #050b21;
   margin-top: 4rem;
+  font-family: "Atomic Age", serif;
+  font-family: "Roboto", serif;
 }
+
 .main-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -15,22 +20,14 @@ body {
   gap: 2rem;
   align-items: stretch;
 }
-/* .cards-wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
-} */
 
 .theCards {
   padding: 1rem;
-  /* padding-bottom: 2rem; */
   border-radius: 11px;
   border: 0.5px solid #aaa;
   background-color: #1f2535;
   opacity: 0.9;
   color: azure;
-  /* width: 290px; */
-  /* height: 220px; */
 }
 .theCards:hover {
   transform: translateY(-5px);
@@ -40,11 +37,13 @@ body {
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
 }
 /* /////////////// IMPORTANT TO REMEMBER ALWAYS /////////////// */
+/* IF TROUBLE with tiles/cards sizes being UNIFORM, DO THIS: */
 .theCards p {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   overflow: hidden;
+  line-clamp: 2;
 }
 /* THIS UI is NOT meant to show full descriptions.
 IN THE EXAMPLE: It is designed like:
@@ -53,6 +52,62 @@ IN THE EXAMPLE: It is designed like:
 ✔ uniform UI components
 👉 those always clamp text for consistency */
 /* /////////////////////////////////////////////////////////// */
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #1f2535;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+
+  margin-bottom: 2rem;
+}
+
+.mode {
+  background-color: #2a3145;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode img {
+  width: 18px;
+  height: 18px;
+}
+
+.topBar img {
+  height: 28px;
+}
+
+.dark {
+  background-color: #050b21;
+  color: white;
+}
+.light {
+  background-color: #f5f5f5;
+  color: #111;
+}
+.light .theCards {
+  background-color: white;
+  color: #111;
+  border: 1px solid #ccc;
+}
+.light .topBar,
+.light .topBar button,
+.light h1,
+.light .navBar button,
+.light .card-controls button {
+  background-color: #eaeaea;
+  color: #111;
+  border: 1px solid #ccc;
+}
 
 .header {
   color: white;
@@ -93,4 +148,37 @@ IN THE EXAMPLE: It is designed like:
 }
 .card-controls button:hover {
   opacity: 0.8;
+  background-color: crimson;
+}
+
+/* --------------------🥚 E E 🐣----------------------- */
+.easterEgg {
+  background: radial-gradient(circle, #ff00cc, #3333ff, #00ffcc);
+  /* background: url("https://i.gifer.com/Gd7.gif"); */
+  background: url("https://i.gifer.com/origin/73/7370303fc26b3f29c54fdd6c7391e25a_w200.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 88%;
+  animation: glow 2s infinite alternate;
+  font-family: "Honk", serif;
+  /* font-family: "Nabla", serif; */
+  font-size: x-large;
+}
+
+/* easter egg - COLOR BLAST */
+.easterEgg .topBar {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.easterEgg .theCards {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid hotpink;
+}
+
+.easterEgg .navBar button,
+.easterEgg .card-controls button,
+.easterEgg .mode {
+  background-color: black;
+  color: hotpink;
+  border: 1px solid hotpink;
 }
