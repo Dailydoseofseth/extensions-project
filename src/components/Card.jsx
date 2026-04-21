@@ -8,10 +8,11 @@ export default function Card({
   isActive,
   handleToggle,
   handleRemove,
+  onLogoClick,
 }) {
   return (
     <div className="theCards">
-      <img src={logo} alt={name} />
+      <img src={logo} alt={name} onClick={onLogoClick} />
       <h2>{name}</h2>
       <p>{description}</p>
 

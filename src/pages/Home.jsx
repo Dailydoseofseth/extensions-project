@@ -3,19 +3,20 @@ import { useState } from "react";
 import data from "../data";
 import Card from "../components/Card.jsx";
 import Button from "../components/Button.jsx";
+import sites from "../sites";
 
 export default function Home() {
   const [extensions, setExtensions] = useState(data);
   console.log(extensions);
   const [filter, setFilter] = useState("showAll");
-    const [darkMode, setDarkMode] = useState(true);
-    console.log("darkMode:", darkMode);
-    console.log("filter:", filter);
+  const [darkMode, setDarkMode] = useState(true);
+  console.log("darkMode:", darkMode);
+  console.log("filter:", filter);
 
   const [logoClicks, setLogoClicks] = useState(0);
-    const [easterEgg, setEasterEgg] = useState(false);
-    console.log("logoClicks:", logoClicks);
-    console.log("easterEgg:", easterEgg);
+  const [easterEgg, setEasterEgg] = useState(false);
+  console.log("logoClicks:", logoClicks);
+  console.log("easterEgg:", easterEgg);
 
   function handleToggle(id) {
     setExtensions((prev) =>
@@ -67,6 +68,13 @@ export default function Home() {
       return newCount;
     });
   }
+  function handleEasterEggClick() {
+    const randomIndex = Math.floor(Math.random() * sites.length);
+
+    const randomSite = sites[randomIndex];
+
+    window.open(randomSite, "_blank");
+  }
 
   return (
     // <div className={darkMode ? "dark" : "light"}>
@@ -113,6 +121,7 @@ export default function Home() {
               isActive={card.isActive}
               handleToggle={handleToggle}
               handleRemove={handleRemove}
+              onLogoClick={handleEasterEggClick}
             />
           </div>
         ))}
