@@ -1,6 +1,6 @@
 const sites = [
-  "https://quickdraw.withgoogle.com/",
-  "https://neal.fun/wonders-of-street-view/",
+  // "https://quickdraw.withgoogle.com/",
+  // "https://neal.fun/wonders-of-street-view/",
   "https://cat-bounce.com/",
   "https://hackertyper.net/",
   "http://slither.com/io",
